@@ -1,7 +1,7 @@
 
 
 <ion-content [ngClass]="scanActivo?'scanner-activo':''">
-  <ion-header style="font-size: 1.4rem">MENU MESA</ion-header>
+  <ion-header style="font-size: 1.4rem; text-align: center; font-family: 'Schibsted Grotesk', sans-serif;">MENU MESA</ion-header>
 
 
     <!-- Spinner -->
@@ -24,13 +24,15 @@
   <div style="height: 90%; width: 100%; margin-top: 2rem;">
 
     <!-- Vista cuando es scaneado -->
-    <div style="height: 100%; width: 100%;" *ngIf="scannerCorrecto" >
-      <br>
+    <div style="height: 100%; width: 100%; margin-top: 5%; margin-left: 10%;" *ngIf="scannerCorrecto" >
+
       <button style="background:url('../../../assets/mozoAtendiendo.jpg  ')no-repeat center center fixed;" class="boton_menu" *ngIf="pedido.estado !== 'pagado'" (click)="consultarMozo()">
         <div class="bg-dark bg-opacity-75 rounded-3 text-white p-1">
           Consultar Mozo
         </div>
       </button>
+      <br>
+      <br>
 
       <button style="background:url('../../../assets/icon/fondo.png')no-repeat center center fixed;" class="boton_menu"  *ngIf="pedido.estado === 'no iniciado'"  (click)="verMenu()">
         <div class="bg-dark bg-opacity-75 rounded-3 text-white p-1">
@@ -49,7 +51,7 @@
           Llego la Comida
         </div>
       </button>
-
+     
       <button class="boton_menu" style="background:url('../../../assets/encuesta.png')no-repeat center center fixed;" *ngIf="pedido.estado === 'pagado'" (click)="verEncuesta()">
         <div class="bg-dark bg-opacity-75 rounded-3 text-white p-1">
           Encuesta de Satisfaccion
